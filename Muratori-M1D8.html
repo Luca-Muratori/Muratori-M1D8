@@ -46,6 +46,10 @@
         questions!
       </h2>
     </div>
+    <button onclick="changeTitle()">Click to change H1</button><!--It work ex1-->
+    <button onclick="addClassToTitle()">Click to change the class of h1 </button><!--It work ex2-->
+    <button onclick="changePcontent()">Click to change the content of the p that are children of div </button>
+    <button onclick="changeUrls()">Click to change the class of goolge </button>
     <script>
       /* EXERCISE 1
        Write a function for changing the title of the document in something else.
@@ -70,8 +74,8 @@
       */
 
       const changePcontent = function () {
-        let p=document.getElementsByTagName('div p')
-        p.innerHTML='This is a new text, changed after the exercise 3'
+        document.querySelector('div>p').innerHtml='Fake thing to say'
+        
       };
 
       /* EXERCISE 4
@@ -120,7 +124,7 @@
 
       const paintItGreen = function () {
         let ul = document.querySelector('ul')
-            ul.style.backgroundColor='green'
+        ul.style.backgroundColor='green'
       };
 
       /* EXERCISE 9
@@ -128,7 +132,7 @@
       */
 
       const makeItClickable = function () {
-        //
+        
       };
 
       /* EXERCISE 10
