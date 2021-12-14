@@ -48,7 +48,6 @@
     </div>
     <button onclick="changeTitle()">Click to change H1</button><!--It work ex1-->
     <button onclick="addClassToTitle()">Click to change the class of h1 </button><!--It work ex2-->
-    <button onclick="changePcontent()">Click to change the content of the p that are children of div </button>
     <button onclick="changeUrls()">Click to change the class of goolge </button>
     <script>
       /* EXERCISE 1
@@ -56,7 +55,7 @@
       */
 
       const changeTitle = function (newTitle) {
-        let h1 = document.querySelector('h1')
+        let h1 = document.querySelector('title')
         h1.innerHTML = "HELLO WORLD"
       };
 
@@ -74,40 +73,45 @@
       */
 
       const changePcontent = function () {
-        document.querySelector('div>p').innerHtml='Fake thing to say'
+        const parDiv= document.querySelectorAll('div p')
+        parDiv.forEach((p)=>{
+          p.innerText='Change this text1234'
+        })
         
       };
+      changePcontent()
 
       /* EXERCISE 4
        Write a function for changing the href property of every link to https://www.google.com
       */
 
       const changeUrls = function () {
-        document.getElementByTag("a").href = "https://www.google.com";
+        const links=document.querySelectorAll("a")
+        links.forEach(link =>{
+        link .href='https://www.google.com'})
       };
-
+      changeUrls()
       /* EXERCISE 5
        Write a function for adding a new list item in the second unordered list.
       */
 
       const addToTheSecond = function (content) {
-        let ul = document.getElementById("secondList");
+        let ul = document.querySelector("#secondList");
         let li = document.createElement("li");
-        li.appendChild(document.createTextNode("Four"));
+        li.appendChild(document.createTextNode(content));
         ul.appendChild(li);
 
       };
-
+      addToTheSecond('Element')
       /* EXERCISE 6
        Write a function for adding a second paragraph to the first div.
       */
 
       const addParagraph = function (content) {
-        let newP = document.createElement("p"); 
-        let textNode = document.createTextNode(" This is a new text node"); 
-        newP.appendChild(textNode);
-        document.getElementById("div") [0].appendChild(newP); 
+        const div=document.querySelectorAll('div')[0];
+        div.innerHTML += `<p>${content}</p>`;
       };
+      addParagraph(content)
 
       /* EXERCISE 7
        Write a function for making the first unordered list disappear.
