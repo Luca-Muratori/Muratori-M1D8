@@ -111,14 +111,16 @@
         const div=document.querySelectorAll('div')[0];
         div.innerHTML += `<p>${content}</p>`;
       };
-      addParagraph(content)
+      addParagraph('my name is Luca')
 
       /* EXERCISE 7
        Write a function for making the first unordered list disappear.
       */
 
       const firstUlDisappear = function () {
-        document.getElementById('firstList').remove
+        const firstList=document.querySelector('#firstList')
+        firstList.remove()
+
         
       };
 
@@ -127,8 +129,11 @@
       */
 
       const paintItGreen = function () {
-        let ul = document.querySelector('ul')
-        ul.style.backgroundColor='green'
+        const everyList=document.querySelectorAll('ul')
+        for(i=0;i<everyList.length; i++){
+          everyList[i].style.background='green'
+        }
+        
       };
 
       /* EXERCISE 9
