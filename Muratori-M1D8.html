@@ -39,7 +39,7 @@
       </div>
     </div>
 
-    <div>
+    <div class='footer'>
       <p>And this text is just for the exercise too!</p>
       <h2 style="color: red">
         Save this page on your computer and open it with VSCode to get the
@@ -160,9 +160,13 @@
       */
 
       const changeFooterText = function () {
-        //
-      };
+        const footer=document.querySelector('.footer')
+        footer.addEventListener('click', function(e){
+          e.target.innerText='I will be a dev';
+        })
 
+      };
+        changeFooterText()
       /* EXERCISE 11
        Attach an event listener to the input field in the page for console logging its value just after any keystroke.
       */
@@ -175,7 +179,7 @@
       */
 
       window.onload = function () {
-        //
+        changeFooterText()
       };
 
       /* EXERCISE 13
