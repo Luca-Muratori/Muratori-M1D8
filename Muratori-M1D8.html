@@ -172,14 +172,16 @@
       */
 
       const inputField = document.getElementById("input-field");
-      // ...
+        inputField.onkeypress = function(e) {
+               console.log(inputField.value);
+         };
 
       /* EXERCISE 12
        Create a welcome alert message when the page successfully loads.
       */
-
+        
       window.onload = function () {
-        changeFooterText()
+        alert('the page is load')
       };
 
       /* EXERCISE 13
